@@ -1,7 +1,7 @@
 # just0curious.github.io
 # People Manager
 
-People Manager: is a responsive, browser-based application for managing individual profiles. It allows users to add, edit, search, and delete profiles using a clean and simple interface. The app works both as a standalone frontend (using browser local storage) or connected to a FastAPI backend for persistent storage.
+People Manager is a responsive, browser-based application for managing individual profiles. It allows users to add, edit, search, and delete profiles through a clean and simple interface. The app connects to a FastAPI backend for persistent storage.
 
 ## Live Demo
 
@@ -13,8 +13,6 @@ People Manager: is a responsive, browser-based application for managing individu
 - Create, edit, and delete individual profiles
 - Search across name, skills, bio, and more
 - Mobile-friendly responsive design
-- Local storage support (no backend required)
-- Optional backend integration with FastAPI
 
 ## Technology Stack
 
