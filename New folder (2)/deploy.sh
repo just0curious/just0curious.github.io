@@ -1,31 +1,31 @@
 #!/bin/bash
 
-# People Manager - GitHub Pages Deployment Script
-# This script helps prepare files for GitHub Pages deployment
+
+
 
 echo "🚀 Preparing People Manager for GitHub Pages deployment..."
 
-# Check if we're in the right directory
+
 if [ ! -d "root" ]; then
     echo "❌ Error: 'root' directory not found!"
     echo "Please run this script from the project root directory."
     exit 1
 fi
 
-# Create deployment directory
+
 echo "📁 Creating deployment directory..."
 rm -rf deploy
 mkdir deploy
 
-# Copy static files
+
 echo "📋 Copying static files..."
 cp -r root/* deploy/
 
-# Create .nojekyll file (prevents GitHub Pages from processing with Jekyll)
+
 echo "🔧 Creating .nojekyll file..."
 touch deploy/.nojekyll
 
-# Create a simple index file for the root
+
 echo "📝 Creating root index file..."
 cat > deploy/index.html << 'EOF'
 <!DOCTYPE html>
