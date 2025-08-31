@@ -23,21 +23,20 @@ People Manager: is a responsive, browser-based application for managing individu
 - Deployment: Vercel, GitHub Pages ready
 
 # Project Structure
+## Project Structure
 
-├──just0curious.github.io/
- ├── New Folder(2)/
-   ├── root/ # Frontend files
-   │ ├── index.html
-   │ ├── script.js
-   │ └── config.js
-   ├── app/ # Backend
-   │ ├── main.py
-   │ ├── models.py
-   │ ├── schemas.py
-   │ ├── crud.py
-   │ └── database.py
-   ├── people_api.db # SQLite database 
- └── README.md
-
-
+- `just0curious.github.io/`
+  - `New Folder(2)/`
+  - `root/`  _(Frontend files)_
+    - `index.html`
+    - `script.js`
+    - `config.js`
+  - `app/`  _(Backend files)_
+    - `main.py`
+    - `models.py`
+    - `schemas.py`
+    - `crud.py`
+    - `database.py`
+    - `people_api.db`  _(SQLite database)_
+  - `README.md`
 
