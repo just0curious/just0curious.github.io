@@ -24,19 +24,21 @@ People Manager: is a responsive, browser-based application for managing individu
 
 # Project Structure
 ## Project Structure
+## Project Structure
 
 - `just0curious.github.io/`
   - `New Folder(2)/`
-  - `root/`  _(Frontend files)_
-    - `index.html`
-    - `script.js`
-    - `config.js`
-  - `app/`  _(Backend files)_
-    - `main.py`
-    - `models.py`
-    - `schemas.py`
-    - `crud.py`
-    - `database.py`
-    - `people_api.db`  _(SQLite database)_
+    - `root/`  _(Frontend files)_
+      - `index.html`
+      - `script.js`
+      - `config.js`
+    - `app/`  _(Backend files)_
+      - `main.py`
+      - `models.py`
+      - `schemas.py`
+      - `crud.py`
+      - `database.py`
+      - `people_api.db`  _(SQLite database)_
   - `README.md`
+
 
