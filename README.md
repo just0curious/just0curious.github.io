@@ -18,9 +18,9 @@ People Manager: is a responsive, browser-based application for managing individu
 
 ## Technology Stack
 
-- **Frontend: HTML, CSS, JavaScript (no frameworks)
-- **Backend: FastAPI (Python), SQLite
-- **Deployment: Vercel, GitHub Pages ready
+- Frontend: HTML, CSS, JavaScript (no frameworks)
+- Backend: FastAPI (Python), SQLite
+- Deployment: Vercel, GitHub Pages ready
 
 # Project Structure
 
