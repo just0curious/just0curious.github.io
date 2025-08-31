@@ -6,7 +6,6 @@ People Manager is a responsive, browser-based application for managing individua
 ## Live Demo
 
 - URL: https://just0curious-github-io.vercel.app/
-- Mode: Demo (frontend only, local storage)
 
 ## Features
 
