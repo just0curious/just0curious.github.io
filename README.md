@@ -20,7 +20,7 @@ People Manager is a responsive, browser-based application for managing individua
 - Backend: FastAPI (Python), SQLite
 - Deployment: Vercel, GitHub Pages ready
 
-# Project Structure
+## Project Structure
 
 - `just0curious.github.io/`
   - `New Folder(2)/`
