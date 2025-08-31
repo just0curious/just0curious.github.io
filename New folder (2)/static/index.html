@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+        }
+
+        .form-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .form-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        .btn-success {
+            background: #27ae60;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .search-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .search-btn {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .search-btn:hover {
+            background: #2980b9;
+        }
+
+        .people-list {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .person-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.2s ease;
+        }
+
+        .person-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .person-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .person-email {
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .person-details {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .person-actions {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .delete-btn {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-box {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>👥 People Manager</h1>
+            <p>Add, search, and manage people profiles</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Add Person Form -->
+            <div class="form-section">
+                <div class="form-title">➕ Add New Person</div>
+                <form id="addPersonForm">
+                    <div class="form-group">
+                        <label class="form-label">Name *</label>
+                        <input type="text" id="personName" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email *</label>
+                        <input type="email" id="personEmail" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Age</label>
+                        <input type="number" id="personAge" class="form-input" min="1" max="120">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Skills</label>
+                        <input type="text" id="personSkills" class="form-input" placeholder="e.g., Python, JavaScript, React">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea id="personDescription" class="form-input" rows="3" placeholder="Brief description about the person..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Location</label>
+                        <input type="text" id="personLocation" class="form-input" placeholder="e.g., New York, London">
+                    </div>
+                    <button type="submit" class="btn btn-success">Add Person</button>
+                </form>
+            </div>
+
+            <!-- Search and Results -->
+            <div>
+                <div class="search-section">
+                    <div class="form-title">🔍 Search People</div>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search by name, skills, description, or location...">
+                        <button onclick="searchPeople()" class="search-btn">Search</button>
+                    </div>
+                    <button onclick="loadAllPeople()" class="btn">Show All People</button>
+                </div>
+
+                <div class="people-list">
+                    <div class="form-title">👥 People List</div>
+                    <div id="peopleList">
+                        <div style="text-align: center; color: #7f8c8d; padding: 20px;">
+                            Click "Show All People" to see the list
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
