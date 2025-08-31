@@ -23,8 +23,6 @@ People Manager: is a responsive, browser-based application for managing individu
 - Deployment: Vercel, GitHub Pages ready
 
 # Project Structure
-## Project Structure
-## Project Structure
 
 - `just0curious.github.io/`
   - `New Folder(2)/`
